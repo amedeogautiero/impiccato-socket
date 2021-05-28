@@ -9,10 +9,9 @@ using System.Windows.Forms;
 
 namespace ImpiccatoSocketClient
 {
-    public class Helper
+    public class SocketHelper
     {
-        public static string data = null;
-        public static void StartListening()
+        public void StartListening()
         {
             // Data buffer for incoming data.  
             byte[] bytes = new Byte[1024];
@@ -43,31 +42,18 @@ namespace ImpiccatoSocketClient
                 // Start listening for connections.  
                 while (true)
                 {
-                    Console.WriteLine("Waiting for a connection...");
-                    // Program is suspended while waiting for an incoming connection.  
                     Socket handler = listener.Accept();
-                    data = null;
 
                     // An incoming connection needs to be processed.  
                     while (true)
                     {
                         int bytesRec = handler.Receive(bytes);
-                        //data += Encoding.ASCII.GetString(bytes, 0, bytesRec);
-                        //if (data.IndexOf("<EOF>") > -1)
-                        //{
-                        //    break;
-                        //}
                         string message = Encoding.ASCII.GetString(bytes, 0, bytesRec);
                         MessageBox.Show(message);
                         break;
                     }
 
-                    // Show the data on the console.  
-                    Console.WriteLine("Text received : {0}", data);
-
-                    // Echo the data back to the client.  
                     byte[] msg = Encoding.ASCII.GetBytes("OK");
-
                     handler.Send(msg);
                     handler.Shutdown(SocketShutdown.Both);
                     handler.Close();
@@ -83,7 +69,7 @@ namespace ImpiccatoSocketClient
             Console.Read();
         }
 
-        public static void StartClient(object _message)
+        public void StartClient(object _message)
         {
             ClientMessage message = _message as ClientMessage;
             // Data buffer for incoming data.  

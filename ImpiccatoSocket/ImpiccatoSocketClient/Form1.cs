@@ -13,14 +13,17 @@ namespace ImpiccatoSocketClient
 {
     public partial class Form1 : Form
     {
+        SocketHelper socketHelper = null;
         public Form1()
         {
             InitializeComponent();
+
+            socketHelper = new SocketHelper();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Thread thread1 = new Thread(Helper.StartListening);
+            Thread thread1 = new Thread(socketHelper.StartListening);
             thread1.Start();
            
         }
@@ -33,7 +36,7 @@ namespace ImpiccatoSocketClient
                 Message = txtMessage.Text,
             };
 
-            Thread thread1 = new Thread(Helper.StartClient);
+            Thread thread1 = new Thread(socketHelper.StartClient);
             thread1.Start(clientMessage);
 
             //Helper.StartClient(txtOtherIP.Text, txtMessage.Text);
