@@ -8,7 +8,9 @@ namespace ImpiccatoSocketClient
 {
     static class Program
     {
+        public static Form1 form1 = null;
         public static Form2 form2 = null;
+        public static Form3 form3 = null;
         /// <summary>
         /// Punto di ingresso principale dell'applicazione.
         /// </summary>
@@ -18,9 +20,15 @@ namespace ImpiccatoSocketClient
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
+            Program.form1 = new Form1();
+
             Program.form2 = new Form2();
             Program.form2.Hide();
-            Application.Run(new Form1());
+
+            Program.form3 = new Form3();
+            Program.form3.Hide();
+
+            Application.Run(Program.form1);
         }
     }
 }

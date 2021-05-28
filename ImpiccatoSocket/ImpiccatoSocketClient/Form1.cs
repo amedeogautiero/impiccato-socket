@@ -49,7 +49,12 @@ namespace ImpiccatoSocketClient
 
 
             socketHelper.OnSfidaOk += delegate (string endpoint)
-            { 
+            {
+                this.BeginInvoke((Action)(() =>
+                {
+                    this.Hide();
+                    Program.form3.Show();
+                }));
             };
         }
 
