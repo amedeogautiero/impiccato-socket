@@ -62,7 +62,7 @@ namespace ImpiccatoSocketClient
                         int bytesRec = handler.Receive(bytes);
                         string message = Encoding.ASCII.GetString(bytes, 0, bytesRec);
                         MessageBox.Show(message);
-                        elab_message(message, handler.RemoteEndPoint.ToString());
+                        elab_message(message, (handler.RemoteEndPoint as IPEndPoint).Address.ToString());
                         break;
                     }
 
