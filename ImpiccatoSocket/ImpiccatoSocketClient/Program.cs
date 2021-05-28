@@ -8,6 +8,7 @@ namespace ImpiccatoSocketClient
 {
     static class Program
     {
+        public static Form2 form2 = null;
         /// <summary>
         /// Punto di ingresso principale dell'applicazione.
         /// </summary>
@@ -16,6 +17,9 @@ namespace ImpiccatoSocketClient
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            Program.form2 = new Form2();
+            Program.form2.Hide();
             Application.Run(new Form1());
         }
     }
