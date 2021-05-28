@@ -28,6 +28,25 @@ namespace ImpiccatoSocketClient
                 }));
             };
 
+            socketHelper.OnChidiSfida += delegate(string endpoint)
+            {
+                
+                var res = MessageBox.Show("Sfida ??", "", MessageBoxButtons.YesNo);
+
+                if (res == DialogResult.Yes)
+                {
+                    this.BeginInvoke((Action)(() =>
+                    {
+                        this.Hide();
+                        Program.form2.Show();
+                    }));
+
+                    return true;
+                }
+
+                return false;
+            };
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -42,7 +61,7 @@ namespace ImpiccatoSocketClient
             ClientMessage clientMessage = new ClientMessage()
             {
                 IPDest = txtOtherIP.Text,
-                TipoMessaggio = tipomessaggio.comando,
+                TipoMessaggio = TipoMessaggio.comando,
                 Message = "sfida",
             };
 

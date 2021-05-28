@@ -11,9 +11,12 @@ namespace ImpiccatoSocketClient
 {
     public delegate void ListeningDelegate(string endpoint);
 
+    public delegate bool ChidiSfidaDelegate(string endpoint);
+
     public class SocketHelper
     {
         public event ListeningDelegate ListeningCompleted;
+        public event ChidiSfidaDelegate OnChidiSfida;
 
         public void StartListening()
         {
@@ -59,6 +62,7 @@ namespace ImpiccatoSocketClient
                         int bytesRec = handler.Receive(bytes);
                         string message = Encoding.ASCII.GetString(bytes, 0, bytesRec);
                         MessageBox.Show(message);
+                        elab_message(message);
                         break;
                     }
 
@@ -78,6 +82,34 @@ namespace ImpiccatoSocketClient
             Console.Read();
         }
 
+        private void elab_message(string message_receive)
+        {
+            if (message_receive == null)
+                return;
+
+            string[] parts = message_receive.Split(':');
+
+            if (parts.Length != 2)
+            {
+                return;
+            }
+
+            string tipomesaggio = parts[0];
+            string message = parts[1];
+
+            if (tipomesaggio == TipoMessaggio.comando.ToString() && message == "sfida")
+            {
+                if (OnChidiSfida != null)
+                {
+                    var ret = OnChidiSfida("");
+
+                    if (ret == true)
+                    { 
+                    }
+                }
+            }
+        }
+
         public void StartClient(object _message)
         {
             ClientMessage message = _message as ClientMessage;
@@ -91,7 +123,20 @@ namespace ImpiccatoSocketClient
                 // This example uses port 11000 on the local computer.  
                 //IPHostEntry ipHostInfo = Dns.GetHostEntry(Dns.GetHostName());
                 //IPAddress ipAddress = ipHostInfo.AddressList[0];
-                IPAddress ipAddress = IPAddress.Parse(message.IPDest);
+
+                string dest = message.IPDest;
+                IPAddress ipAddress = null;
+
+                if (message.IPDest.ToLower() == "me")
+                {
+                    IPHostEntry ipHostInfo = Dns.GetHostEntry(Dns.GetHostName());
+                    ipAddress = ipHostInfo.AddressList.FirstOrDefault(f => f.ToString().StartsWith("192.168.10"));
+                }
+                else
+                { 
+                    ipAddress = IPAddress.Parse(dest);
+                }
+
                 IPEndPoint remoteEP = new IPEndPoint(ipAddress, 11000);
 
                 // Create a TCP/IP  socket.  
@@ -110,9 +155,9 @@ namespace ImpiccatoSocketClient
 
                     string message_to_send = string.Empty;
 
-                    if (message.TipoMessaggio == tipomessaggio.comando)
+                    if (message.TipoMessaggio == TipoMessaggio.comando)
                     {
-                        message_to_send = $"CMD:{message.Message}";
+                        message_to_send = $"{message.TipoMessaggio.ToString()}:{message.Message}";
                     }
 
                     byte[] msg = Encoding.ASCII.GetBytes(message_to_send);
@@ -157,10 +202,10 @@ namespace ImpiccatoSocketClient
 
         public string Message { get; set; }
 
-        public tipomessaggio TipoMessaggio { get; set; }
+        public TipoMessaggio TipoMessaggio { get; set; }
     }
 
-    public enum tipomessaggio
+    public enum TipoMessaggio
     { 
         comando
     }
