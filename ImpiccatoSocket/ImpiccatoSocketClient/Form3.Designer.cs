@@ -33,7 +33,7 @@ namespace ImpiccatoSocketClient
             this.btn_scrivi = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbl_lunghezza1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbl_scrivi
@@ -49,7 +49,7 @@ namespace ImpiccatoSocketClient
             // 
             this.btn_scrivi.BackColor = System.Drawing.Color.Orange;
             this.btn_scrivi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_scrivi.Location = new System.Drawing.Point(15, 141);
+            this.btn_scrivi.Location = new System.Drawing.Point(12, 118);
             this.btn_scrivi.Name = "btn_scrivi";
             this.btn_scrivi.Size = new System.Drawing.Size(75, 23);
             this.btn_scrivi.TabIndex = 1;
@@ -66,33 +66,34 @@ namespace ImpiccatoSocketClient
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 89);
+            this.label1.Location = new System.Drawing.Point(12, 83);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "N. lettere:";
             // 
-            // label2
+            // lbl_lunghezza1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(66, 89);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "label2";
+            this.lbl_lunghezza1.AutoSize = true;
+            this.lbl_lunghezza1.Location = new System.Drawing.Point(71, 83);
+            this.lbl_lunghezza1.Name = "lbl_lunghezza1";
+            this.lbl_lunghezza1.Size = new System.Drawing.Size(0, 13);
+            this.lbl_lunghezza1.TabIndex = 4;
             // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(250, 176);
-            this.Controls.Add(this.label2);
+            this.ClientSize = new System.Drawing.Size(228, 160);
+            this.Controls.Add(this.lbl_lunghezza1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btn_scrivi);
             this.Controls.Add(this.lbl_scrivi);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form3";
             this.Text = "Form3";
+            this.Load += new System.EventHandler(this.Form3_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -104,6 +105,6 @@ namespace ImpiccatoSocketClient
         private System.Windows.Forms.Button btn_scrivi;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbl_lunghezza1;
     }
 }

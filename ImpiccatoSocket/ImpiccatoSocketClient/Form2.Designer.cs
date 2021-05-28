@@ -58,6 +58,8 @@ namespace ImpiccatoSocketClient
             this.panel1 = new System.Windows.Forms.Panel();
             this.txt_messchat = new System.Windows.Forms.TextBox();
             this.btn_messchat = new System.Windows.Forms.Button();
+            this.btn_mostra = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // letter_a
@@ -350,11 +352,31 @@ namespace ImpiccatoSocketClient
             this.btn_messchat.Text = "Invia";
             this.btn_messchat.UseVisualStyleBackColor = false;
             // 
+            // btn_mostra
+            // 
+            this.btn_mostra.Location = new System.Drawing.Point(569, 266);
+            this.btn_mostra.Name = "btn_mostra";
+            this.btn_mostra.Size = new System.Drawing.Size(93, 23);
+            this.btn_mostra.TabIndex = 29;
+            this.btn_mostra.Text = "Mostra";
+            this.btn_mostra.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(553, 250);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(135, 13);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "Mostra una lettera casuale:";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(723, 444);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btn_mostra);
             this.Controls.Add(this.btn_messchat);
             this.Controls.Add(this.txt_messchat);
             this.Controls.Add(this.panel1);
@@ -423,5 +445,7 @@ namespace ImpiccatoSocketClient
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txt_messchat;
         private System.Windows.Forms.Button btn_messchat;
+        private System.Windows.Forms.Button btn_mostra;
+        private System.Windows.Forms.Label label1;
     }
 }
