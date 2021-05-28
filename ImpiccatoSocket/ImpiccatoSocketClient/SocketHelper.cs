@@ -11,12 +11,15 @@ namespace ImpiccatoSocketClient
 {
     public delegate void ListeningDelegate(string endpoint);
 
-    public delegate bool ChidiSfidaDelegate(string endpoint);
+    public delegate bool ChiediSfidaDelegate(string endpoint);
+
+    public delegate void SfidaOkDelegate(string endpoint);
 
     public class SocketHelper
     {
         public event ListeningDelegate ListeningCompleted;
-        public event ChidiSfidaDelegate OnChidiSfida;
+        public event ChiediSfidaDelegate OnChiediSfida;
+        public event SfidaOkDelegate OnSfidaOk;
 
         public void StartListening()
         {
@@ -99,9 +102,9 @@ namespace ImpiccatoSocketClient
 
             if (tipomesaggio == TipoMessaggio.comando.ToString() && message == "sfida")
             {
-                if (OnChidiSfida != null)
+                if (OnChiediSfida != null)
                 {
-                    var ret = OnChidiSfida(remote);
+                    var ret = OnChiediSfida(remote);
 
                     if (ret == true)
                     {
@@ -115,6 +118,15 @@ namespace ImpiccatoSocketClient
                     }
                 }
             }
+            else if (tipomesaggio == TipoMessaggio.comando.ToString() && message == "sfidaok")
+            {
+                if (OnSfidaOk != null)
+                {
+                    OnSfidaOk("");
+                }
+            }
+
+                
         }
 
         public void StartClient(object _message)

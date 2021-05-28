@@ -28,7 +28,7 @@ namespace ImpiccatoSocketClient
                 }));
             };
 
-            socketHelper.OnChidiSfida += delegate(string endpoint)
+            socketHelper.OnChiediSfida += delegate(string endpoint)
             {
                 
                 var res = MessageBox.Show("Sfida ??", "", MessageBoxButtons.YesNo);
@@ -47,6 +47,10 @@ namespace ImpiccatoSocketClient
                 return false;
             };
 
+
+            socketHelper.OnSfidaOk += delegate (string endpoint)
+            { 
+            };
         }
 
         private void Form1_Load(object sender, EventArgs e)
