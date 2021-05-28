@@ -42,7 +42,7 @@ namespace ImpiccatoSocketClient
             ClientMessage clientMessage = new ClientMessage()
             {
                 IPDest = txtOtherIP.Text,
-                Message = txtMessage.Text,
+                //Message = txtMessage.Text,
             };
 
             Thread thread1 = new Thread(socketHelper.StartClient);
