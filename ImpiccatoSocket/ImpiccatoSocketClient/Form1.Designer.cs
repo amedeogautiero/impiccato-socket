@@ -32,7 +32,7 @@ namespace ImpiccatoSocketClient
             this.txtOtherIP = new System.Windows.Forms.TextBox();
             this.btnSend = new System.Windows.Forms.Button();
             this.txtMessage = new System.Windows.Forms.TextBox();
-            this.txtMyIP = new System.Windows.Forms.TextBox();
+            this.lbMyEndpoint = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtOtherIP
@@ -59,19 +59,21 @@ namespace ImpiccatoSocketClient
             this.txtMessage.Size = new System.Drawing.Size(287, 22);
             this.txtMessage.TabIndex = 2;
             // 
-            // txtMyIP
+            // lbMyEndpoint
             // 
-            this.txtMyIP.Location = new System.Drawing.Point(501, 12);
-            this.txtMyIP.Name = "txtMyIP";
-            this.txtMyIP.Size = new System.Drawing.Size(287, 22);
-            this.txtMyIP.TabIndex = 3;
+            this.lbMyEndpoint.AutoSize = true;
+            this.lbMyEndpoint.Location = new System.Drawing.Point(586, 18);
+            this.lbMyEndpoint.Name = "lbMyEndpoint";
+            this.lbMyEndpoint.Size = new System.Drawing.Size(46, 17);
+            this.lbMyEndpoint.TabIndex = 4;
+            this.lbMyEndpoint.Text = "label1";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.txtMyIP);
+            this.Controls.Add(this.lbMyEndpoint);
             this.Controls.Add(this.txtMessage);
             this.Controls.Add(this.btnSend);
             this.Controls.Add(this.txtOtherIP);
@@ -88,7 +90,7 @@ namespace ImpiccatoSocketClient
         private System.Windows.Forms.TextBox txtOtherIP;
         private System.Windows.Forms.Button btnSend;
         private System.Windows.Forms.TextBox txtMessage;
-        private System.Windows.Forms.TextBox txtMyIP;
+        private System.Windows.Forms.Label lbMyEndpoint;
     }
 }
 
