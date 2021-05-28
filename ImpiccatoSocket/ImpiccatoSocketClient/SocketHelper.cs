@@ -9,8 +9,12 @@ using System.Windows.Forms;
 
 namespace ImpiccatoSocketClient
 {
+    public delegate void ListeningDelegate(string endpoint);
+
     public class SocketHelper
     {
+        public event ListeningDelegate ListeningCompleted;
+
         public void StartListening()
         {
             // Data buffer for incoming data.  
@@ -38,6 +42,11 @@ namespace ImpiccatoSocketClient
             {
                 listener.Bind(localEndPoint);
                 listener.Listen(10);
+
+                if (ListeningCompleted != null)
+                {
+                    ListeningCompleted($"{ipAddress.ToString()}:11000");
+                }
 
                 // Start listening for connections.  
                 while (true)
