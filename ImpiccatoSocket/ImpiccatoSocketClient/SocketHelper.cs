@@ -107,7 +107,15 @@ namespace ImpiccatoSocketClient
                         sender.RemoteEndPoint.ToString());
 
                     // Encode the data string into a byte array.  
-                    byte[] msg = Encoding.ASCII.GetBytes(message.Message);
+
+                    string message_to_send = string.Empty;
+
+                    if (message.TipoMessaggio == tipomessaggio.comando)
+                    {
+                        message_to_send = $"CMD:{message.Message}";
+                    }
+
+                    byte[] msg = Encoding.ASCII.GetBytes(message_to_send);
 
                     // Send the data through the socket.  
                     int bytesSent = sender.Send(msg);
@@ -148,5 +156,12 @@ namespace ImpiccatoSocketClient
         public string IPDest { get; set; }
 
         public string Message { get; set; }
+
+        public tipomessaggio TipoMessaggio { get; set; }
+    }
+
+    public enum tipomessaggio
+    { 
+        comando
     }
 }

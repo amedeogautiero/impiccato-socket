@@ -31,7 +31,7 @@ namespace ImpiccatoSocketClient
         {
             this.txtOtherIP = new System.Windows.Forms.TextBox();
             this.lbMyEndpoint = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_send = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtOtherIP
@@ -51,21 +51,22 @@ namespace ImpiccatoSocketClient
             this.lbMyEndpoint.Size = new System.Drawing.Size(0, 13);
             this.lbMyEndpoint.TabIndex = 4;
             // 
-            // button1
+            // btn_send
             // 
-            this.button1.Location = new System.Drawing.Point(18, 85);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Sfida!";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_send.Location = new System.Drawing.Point(18, 85);
+            this.btn_send.Name = "btn_send";
+            this.btn_send.Size = new System.Drawing.Size(75, 23);
+            this.btn_send.TabIndex = 5;
+            this.btn_send.Text = "Sfida!";
+            this.btn_send.UseVisualStyleBackColor = true;
+            this.btn_send.Click += new System.EventHandler(this.btnSend_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(180, 143);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_send);
             this.Controls.Add(this.lbMyEndpoint);
             this.Controls.Add(this.txtOtherIP);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -82,7 +83,7 @@ namespace ImpiccatoSocketClient
 
         private System.Windows.Forms.TextBox txtOtherIP;
         private System.Windows.Forms.Label lbMyEndpoint;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_send;
     }
 }
 

@@ -42,7 +42,8 @@ namespace ImpiccatoSocketClient
             ClientMessage clientMessage = new ClientMessage()
             {
                 IPDest = txtOtherIP.Text,
-                //Message = txtMessage.Text,
+                TipoMessaggio = tipomessaggio.comando,
+                Message = "sfida",
             };
 
             Thread thread1 = new Thread(socketHelper.StartClient);
