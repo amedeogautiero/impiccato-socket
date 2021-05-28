@@ -101,10 +101,17 @@ namespace ImpiccatoSocketClient
             {
                 if (OnChidiSfida != null)
                 {
-                    var ret = OnChidiSfida("");
+                    var ret = OnChidiSfida(remote);
 
                     if (ret == true)
-                    { 
+                    {
+                        ClientMessage clientMessage = new ClientMessage()
+                        {
+                            IPDest = remote,
+                            TipoMessaggio = TipoMessaggio.comando,
+                            Message = "sfidaok",
+                        };
+                        this.StartClient(clientMessage);
                     }
                 }
             }
