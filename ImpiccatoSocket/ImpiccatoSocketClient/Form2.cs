@@ -21,5 +21,19 @@ namespace ImpiccatoSocketClient
         {
 
         }
+
+        /*
+        #region Draw Hangman
+        void DrawHangman()
+        {
+            Graphics g = panel1.CreateGraphics();
+            Pen p = new Pen(Color.Black, 10);
+            g.DrawLine(p, new Point(130, 220), new Point(150, 5));
+            g.DrawLine(p, new Point(135, 5), new Point(150, 5));
+            g.DrawLine(p, new Point(60, 0), new Point(150, 5));
+
+        }
+        #endregion
+        */
     }
 }

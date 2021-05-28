@@ -53,12 +53,14 @@ namespace ImpiccatoSocketClient
             // 
             // btn_send
             // 
+            this.btn_send.BackColor = System.Drawing.Color.Orange;
+            this.btn_send.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_send.Location = new System.Drawing.Point(18, 85);
             this.btn_send.Name = "btn_send";
             this.btn_send.Size = new System.Drawing.Size(75, 23);
             this.btn_send.TabIndex = 5;
             this.btn_send.Text = "Sfida!";
-            this.btn_send.UseVisualStyleBackColor = true;
+            this.btn_send.UseVisualStyleBackColor = false;
             this.btn_send.Click += new System.EventHandler(this.btnSend_Click);
             // 
             // Form1
