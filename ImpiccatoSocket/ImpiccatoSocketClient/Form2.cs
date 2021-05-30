@@ -58,6 +58,7 @@ namespace ImpiccatoSocketClient
                 TipoMessaggio = TipoMessaggio.trychar,
                 Message = (sender as Button).Text.ToUpper(),
             };
+            (sender as Button).Enabled = false;
 
             Thread thread1 = new Thread(Program.socketHelper.StartClient);
             thread1.Start(clientMessage);
