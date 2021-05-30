@@ -256,5 +256,6 @@ namespace ImpiccatoSocketClient
     { 
         comando,
         trychar,
+        checkchar,
     }
 }

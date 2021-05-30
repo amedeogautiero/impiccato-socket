@@ -21,10 +21,45 @@ namespace ImpiccatoSocketClient
             {
                 this.BeginInvoke((Action)(() =>
                 {
-                    var ret = txtWord.Text.ToUpper().Contains(@char);
-                    MessageBox.Show(ret.ToString());
+                    //var ret = txtWord.Text.ToUpper().Contains(@char);
+                    //MessageBox.Show(ret.ToString());
+                    check_char(@char);
                 }));
             };
+        }
+
+        private void check_char(string @char)
+        {
+            List<int> indexes = new List<int>();
+
+            Func<int> lastIndex = delegate ()
+            {
+                if (indexes.Count == 0)
+                    return -1;
+                else
+                    return indexes.Last();
+            };
+
+            int index = 0;
+
+            do
+            {
+                index = txtWord.Text.IndexOf(@char, lastIndex() + 1);
+                if (index >= 0)
+                {
+                    indexes.Add(index);
+                }
+            } while (index >= 0);
+
+            ClientMessage clientMessage = new ClientMessage()
+            {
+                IPDest = Program.IPother,
+                TipoMessaggio = TipoMessaggio.checkchar,
+                Message = string.Join("|", indexes.Select(i => i.ToString())),
+            };
+
+            Thread thread1 = new Thread(Program.socketHelper.StartClient);
+            thread1.Start(clientMessage);
         }
 
         private void Form3_Load(object sender, EventArgs e)

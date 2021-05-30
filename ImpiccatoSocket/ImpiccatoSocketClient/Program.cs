@@ -23,6 +23,12 @@ namespace ImpiccatoSocketClient
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
+            string word = "cgaho".ToUpper();
+            string @char = "i".ToUpper();
+
+            
+
+
             socketHelper = new SocketHelper();
 
             Program.form1 = new Form1();
