@@ -35,6 +35,8 @@ namespace ImpiccatoSocketClient
             //IPAddress ipAddress = ipHostInfo.AddressList[0];
             IPAddress ipAddress = ipHostInfo.AddressList.FirstOrDefault(f => f.ToString().StartsWith("192.168.10"));
 
+            if (ipAddress == null)
+                return;
 
             IPEndPoint localEndPoint = new IPEndPoint(ipAddress, 11000);
 
