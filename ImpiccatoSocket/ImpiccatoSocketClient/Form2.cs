@@ -15,6 +15,14 @@ namespace ImpiccatoSocketClient
         public Form2()
         {
             InitializeComponent();
+
+            Program.socketHelper.OnStartGame += delegate (string endpoint)
+            {
+                this.BeginInvoke((Action)(() =>
+                {
+                    grpLettere.Enabled = true;
+                }));
+            };
         }
 
         private void button19_Click(object sender, EventArgs e)

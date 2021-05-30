@@ -15,11 +15,14 @@ namespace ImpiccatoSocketClient
 
     public delegate void SfidaOkDelegate(string endpoint);
 
+    public delegate void StartGameDelegate(string endpoint);
+
     public class SocketHelper
     {
         public event ListeningDelegate ListeningCompleted;
         public event ChiediSfidaDelegate OnChiediSfida;
         public event SfidaOkDelegate OnSfidaOk;
+        public event StartGameDelegate OnStartGame;
 
         public void StartListening()
         {
@@ -127,8 +130,14 @@ namespace ImpiccatoSocketClient
                     OnSfidaOk("");
                 }
             }
+            else if (tipomesaggio == TipoMessaggio.comando.ToString() && message == "startgame")
+            {
+                if (OnStartGame != null)
+                {
+                    OnStartGame("");
+                }
+            }
 
-                
         }
 
         public void StartClient(object _message)
