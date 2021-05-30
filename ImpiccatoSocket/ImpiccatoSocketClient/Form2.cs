@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -32,7 +33,15 @@ namespace ImpiccatoSocketClient
 
         private void char_Click(object sender, EventArgs e)
         {
+            ClientMessage clientMessage = new ClientMessage()
+            {
+                IPDest = Program.IPother,
+                TipoMessaggio = TipoMessaggio.trychar,
+                Message = (sender as Button).Text,
+            };
 
+            Thread thread1 = new Thread(Program.socketHelper.StartClient);
+            thread1.Start(clientMessage);
         }
 
         /*
