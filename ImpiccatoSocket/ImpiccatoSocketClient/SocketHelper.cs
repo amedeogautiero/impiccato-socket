@@ -130,12 +130,12 @@ namespace ImpiccatoSocketClient
                     OnSfidaOk("");
                 }
             }
-            else if (tipomesaggio == TipoMessaggio.comando.ToString() && message.StartsWith("startgame:"))
+            else if (tipomesaggio == TipoMessaggio.comando.ToString() && message.StartsWith("startgame|"))
             {
                 if (OnStartGame != null)
                 {
                     string[] parts2 = message.Split('|');
-                    OnStartGame(int.Parse(parts[1]));
+                    OnStartGame(int.Parse(parts2[1]));
                 }
             }
 
