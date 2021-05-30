@@ -21,7 +21,7 @@ namespace ImpiccatoSocketClient
             {
                 this.BeginInvoke((Action)(() =>
                 {
-                    var ret = txtWord.Text.Contains(@char);
+                    var ret = txtWord.Text.ToUpper().Contains(@char);
                     MessageBox.Show(ret.ToString());
                 }));
             };
