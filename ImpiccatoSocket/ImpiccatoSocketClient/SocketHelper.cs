@@ -21,6 +21,9 @@ namespace ImpiccatoSocketClient
 
     public delegate void TryCharFailDelegate();
 
+    public delegate void TryCharSuccessDelegate(List<int> indexes);
+
+
     public class SocketHelper
     {
         public event ListeningDelegate ListeningCompleted;
@@ -29,7 +32,7 @@ namespace ImpiccatoSocketClient
         public event StartGameDelegate OnStartGame;
         public event TryCharDelegate OnTryChar;
         public event TryCharFailDelegate OnTryCharFail;
-
+        public event TryCharSuccessDelegate OnTryCharSuccess;
         public void StartListening()
         {
             // Data buffer for incoming data.  
@@ -158,6 +161,16 @@ namespace ImpiccatoSocketClient
                     if (OnTryCharFail != null)
                     {
                         OnTryCharFail();
+                    }
+                }
+                else
+                {
+                    string[] str_indexes = message.Split('|');
+                    List<int> indexes = str_indexes.Select(i => int.Parse(i)).ToList();
+
+                    if (OnTryCharSuccess != null)
+                    {
+                        OnTryCharSuccess(indexes);
                     }
                 }
             }

@@ -16,6 +16,11 @@ namespace ImpiccatoSocketClient
         List<Bitmap> bitmaps = new List<Bitmap>();
         int tentativi = 0;
         int tentativiFalliti = 0;
+        int tentativiOK = 0;
+        int wordLength = 0;
+        string lastChar = string.Empty;
+
+
         public Form2()
         {
             InitializeComponent();
@@ -28,15 +33,13 @@ namespace ImpiccatoSocketClient
             bitmaps.Add(global::ImpiccatoSocketClient.Properties.Resources.hangman5);
             bitmaps.Add(global::ImpiccatoSocketClient.Properties.Resources.hangman6);
 
-            
-
-            Program.socketHelper.OnStartGame += delegate (int wordLength)
+            Program.socketHelper.OnStartGame += delegate (int _wordLength)
             {
+                this.wordLength = _wordLength;
                 this.BeginInvoke((Action)(() =>
                 {
                     grpLettere.Enabled = true;
-                    //MessageBox.Show(wordLength.ToString());
-                    draw_place_letter(wordLength);
+                    draw_place_letter(_wordLength);
                 }));
             };
 
@@ -53,6 +56,26 @@ namespace ImpiccatoSocketClient
                     if (tentativiFalliti == 6)
                     {
                         MessageBox.Show("Hai perso");
+                        grpLettere.Enabled = false;
+                    }
+                }));
+            };
+
+            Program.socketHelper.OnTryCharSuccess += delegate (List<int> indexes)
+            {
+                tentativiOK++;
+
+                this.BeginInvoke((Action)(() =>
+                {
+                    foreach (int index in indexes)
+                    {
+                        (panel2.Controls[index] as Label).Text = lastChar;
+                    }
+
+                    if (tentativiOK == this.wordLength)
+                    {
+                        MessageBox.Show("Hai vinto");
+                        grpLettere.Enabled = false;
                     }
                 }));
             };
@@ -83,11 +106,12 @@ namespace ImpiccatoSocketClient
         
         private void char_Click(object sender, EventArgs e)
         {
+            lastChar = (sender as Button).Text.ToUpper();
             ClientMessage clientMessage = new ClientMessage()
             {
                 IPDest = Program.IPother,
                 TipoMessaggio = TipoMessaggio.trychar,
-                Message = (sender as Button).Text.ToUpper(),
+                Message = lastChar,
             };
             (sender as Button).Enabled = false;
 
