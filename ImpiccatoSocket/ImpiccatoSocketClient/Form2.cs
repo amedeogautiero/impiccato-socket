@@ -13,9 +13,22 @@ namespace ImpiccatoSocketClient
 {
     public partial class Form2 : Form
     {
+        List<Bitmap> bitmaps = new List<Bitmap>();
+        int tentativi = 0;
+        int tentativiFalliti = 0;
         public Form2()
         {
             InitializeComponent();
+
+            bitmaps.Add(global::ImpiccatoSocketClient.Properties.Resources.hangman0);
+            bitmaps.Add(global::ImpiccatoSocketClient.Properties.Resources.hangman1);
+            bitmaps.Add(global::ImpiccatoSocketClient.Properties.Resources.hangman2);
+            bitmaps.Add(global::ImpiccatoSocketClient.Properties.Resources.hangman3);
+            bitmaps.Add(global::ImpiccatoSocketClient.Properties.Resources.hangman4);
+            bitmaps.Add(global::ImpiccatoSocketClient.Properties.Resources.hangman5);
+            bitmaps.Add(global::ImpiccatoSocketClient.Properties.Resources.hangman6);
+
+            
 
             Program.socketHelper.OnStartGame += delegate (int wordLength)
             {
@@ -24,6 +37,23 @@ namespace ImpiccatoSocketClient
                     grpLettere.Enabled = true;
                     //MessageBox.Show(wordLength.ToString());
                     draw_place_letter(wordLength);
+                }));
+            };
+
+            Program.socketHelper.OnTryCharFail += delegate ()
+            {
+                tentativiFalliti++;
+
+                this.BeginInvoke((Action)(() =>
+                {
+
+                    Bitmap bitmap = bitmaps[tentativiFalliti];
+                    this.pictureBox1.Image = bitmap;
+
+                    if (tentativiFalliti == 6)
+                    {
+                        MessageBox.Show("Hai perso");
+                    }
                 }));
             };
         }
@@ -50,6 +80,7 @@ namespace ImpiccatoSocketClient
             }
         }
 
+        
         private void char_Click(object sender, EventArgs e)
         {
             ClientMessage clientMessage = new ClientMessage()
@@ -62,6 +93,8 @@ namespace ImpiccatoSocketClient
 
             Thread thread1 = new Thread(Program.socketHelper.StartClient);
             thread1.Start(clientMessage);
+
+            tentativi++;
         }
 
         /*
