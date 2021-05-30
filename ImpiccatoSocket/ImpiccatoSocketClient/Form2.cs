@@ -17,11 +17,12 @@ namespace ImpiccatoSocketClient
         {
             InitializeComponent();
 
-            Program.socketHelper.OnStartGame += delegate (string endpoint)
+            Program.socketHelper.OnStartGame += delegate (int wordLength)
             {
                 this.BeginInvoke((Action)(() =>
                 {
                     grpLettere.Enabled = true;
+                    MessageBox.Show(wordLength.ToString());
                 }));
             };
         }
