@@ -60,12 +60,14 @@ namespace ImpiccatoSocketClient
             this.btn_messchat = new System.Windows.Forms.Button();
             this.btn_mostra = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.lettere = new System.Windows.Forms.GroupBox();
+            this.lettere.SuspendLayout();
             this.SuspendLayout();
             // 
             // letter_a
             // 
             this.letter_a.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.letter_a.Location = new System.Drawing.Point(121, 364);
+            this.letter_a.Location = new System.Drawing.Point(18, 32);
             this.letter_a.Name = "letter_a";
             this.letter_a.Size = new System.Drawing.Size(25, 23);
             this.letter_a.TabIndex = 0;
@@ -75,7 +77,7 @@ namespace ImpiccatoSocketClient
             // letter_b
             // 
             this.letter_b.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.letter_b.Location = new System.Drawing.Point(152, 364);
+            this.letter_b.Location = new System.Drawing.Point(49, 32);
             this.letter_b.Name = "letter_b";
             this.letter_b.Size = new System.Drawing.Size(25, 23);
             this.letter_b.TabIndex = 1;
@@ -85,7 +87,7 @@ namespace ImpiccatoSocketClient
             // letter_c
             // 
             this.letter_c.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.letter_c.Location = new System.Drawing.Point(183, 364);
+            this.letter_c.Location = new System.Drawing.Point(80, 32);
             this.letter_c.Name = "letter_c";
             this.letter_c.Size = new System.Drawing.Size(25, 23);
             this.letter_c.TabIndex = 2;
@@ -95,7 +97,7 @@ namespace ImpiccatoSocketClient
             // letter_d
             // 
             this.letter_d.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.letter_d.Location = new System.Drawing.Point(214, 364);
+            this.letter_d.Location = new System.Drawing.Point(111, 32);
             this.letter_d.Name = "letter_d";
             this.letter_d.Size = new System.Drawing.Size(25, 23);
             this.letter_d.TabIndex = 3;
@@ -105,7 +107,7 @@ namespace ImpiccatoSocketClient
             // letter_e
             // 
             this.letter_e.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.letter_e.Location = new System.Drawing.Point(245, 364);
+            this.letter_e.Location = new System.Drawing.Point(142, 32);
             this.letter_e.Name = "letter_e";
             this.letter_e.Size = new System.Drawing.Size(25, 23);
             this.letter_e.TabIndex = 4;
@@ -115,7 +117,7 @@ namespace ImpiccatoSocketClient
             // letter_f
             // 
             this.letter_f.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.letter_f.Location = new System.Drawing.Point(276, 364);
+            this.letter_f.Location = new System.Drawing.Point(173, 32);
             this.letter_f.Name = "letter_f";
             this.letter_f.Size = new System.Drawing.Size(25, 23);
             this.letter_f.TabIndex = 5;
@@ -125,7 +127,7 @@ namespace ImpiccatoSocketClient
             // letter_g
             // 
             this.letter_g.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.letter_g.Location = new System.Drawing.Point(307, 364);
+            this.letter_g.Location = new System.Drawing.Point(204, 32);
             this.letter_g.Name = "letter_g";
             this.letter_g.Size = new System.Drawing.Size(25, 23);
             this.letter_g.TabIndex = 6;
@@ -135,7 +137,7 @@ namespace ImpiccatoSocketClient
             // letter_h
             // 
             this.letter_h.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.letter_h.Location = new System.Drawing.Point(337, 364);
+            this.letter_h.Location = new System.Drawing.Point(234, 32);
             this.letter_h.Name = "letter_h";
             this.letter_h.Size = new System.Drawing.Size(25, 23);
             this.letter_h.TabIndex = 7;
@@ -145,7 +147,7 @@ namespace ImpiccatoSocketClient
             // letter_i
             // 
             this.letter_i.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.letter_i.Location = new System.Drawing.Point(368, 364);
+            this.letter_i.Location = new System.Drawing.Point(265, 32);
             this.letter_i.Name = "letter_i";
             this.letter_i.Size = new System.Drawing.Size(25, 23);
             this.letter_i.TabIndex = 8;
@@ -155,7 +157,7 @@ namespace ImpiccatoSocketClient
             // letter_j
             // 
             this.letter_j.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.letter_j.Location = new System.Drawing.Point(399, 364);
+            this.letter_j.Location = new System.Drawing.Point(296, 32);
             this.letter_j.Name = "letter_j";
             this.letter_j.Size = new System.Drawing.Size(25, 23);
             this.letter_j.TabIndex = 9;
@@ -165,7 +167,7 @@ namespace ImpiccatoSocketClient
             // letter_k
             // 
             this.letter_k.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.letter_k.Location = new System.Drawing.Point(430, 364);
+            this.letter_k.Location = new System.Drawing.Point(327, 32);
             this.letter_k.Name = "letter_k";
             this.letter_k.Size = new System.Drawing.Size(25, 23);
             this.letter_k.TabIndex = 10;
@@ -175,7 +177,7 @@ namespace ImpiccatoSocketClient
             // letter_l
             // 
             this.letter_l.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.letter_l.Location = new System.Drawing.Point(461, 364);
+            this.letter_l.Location = new System.Drawing.Point(358, 32);
             this.letter_l.Name = "letter_l";
             this.letter_l.Size = new System.Drawing.Size(25, 23);
             this.letter_l.TabIndex = 11;
@@ -185,7 +187,7 @@ namespace ImpiccatoSocketClient
             // letter_m
             // 
             this.letter_m.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.letter_m.Location = new System.Drawing.Point(492, 364);
+            this.letter_m.Location = new System.Drawing.Point(389, 32);
             this.letter_m.Name = "letter_m";
             this.letter_m.Size = new System.Drawing.Size(25, 23);
             this.letter_m.TabIndex = 12;
@@ -195,7 +197,7 @@ namespace ImpiccatoSocketClient
             // letter_n
             // 
             this.letter_n.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.letter_n.Location = new System.Drawing.Point(121, 393);
+            this.letter_n.Location = new System.Drawing.Point(18, 61);
             this.letter_n.Name = "letter_n";
             this.letter_n.Size = new System.Drawing.Size(25, 23);
             this.letter_n.TabIndex = 13;
@@ -205,7 +207,7 @@ namespace ImpiccatoSocketClient
             // letter_o
             // 
             this.letter_o.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.letter_o.Location = new System.Drawing.Point(152, 393);
+            this.letter_o.Location = new System.Drawing.Point(49, 61);
             this.letter_o.Name = "letter_o";
             this.letter_o.Size = new System.Drawing.Size(25, 23);
             this.letter_o.TabIndex = 14;
@@ -215,7 +217,7 @@ namespace ImpiccatoSocketClient
             // letter_p
             // 
             this.letter_p.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.letter_p.Location = new System.Drawing.Point(183, 393);
+            this.letter_p.Location = new System.Drawing.Point(80, 61);
             this.letter_p.Name = "letter_p";
             this.letter_p.Size = new System.Drawing.Size(25, 23);
             this.letter_p.TabIndex = 15;
@@ -225,7 +227,7 @@ namespace ImpiccatoSocketClient
             // letter_q
             // 
             this.letter_q.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.letter_q.Location = new System.Drawing.Point(214, 393);
+            this.letter_q.Location = new System.Drawing.Point(111, 61);
             this.letter_q.Name = "letter_q";
             this.letter_q.Size = new System.Drawing.Size(25, 23);
             this.letter_q.TabIndex = 16;
@@ -235,7 +237,7 @@ namespace ImpiccatoSocketClient
             // letter_r
             // 
             this.letter_r.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.letter_r.Location = new System.Drawing.Point(245, 393);
+            this.letter_r.Location = new System.Drawing.Point(142, 61);
             this.letter_r.Name = "letter_r";
             this.letter_r.Size = new System.Drawing.Size(25, 23);
             this.letter_r.TabIndex = 17;
@@ -245,7 +247,7 @@ namespace ImpiccatoSocketClient
             // letter_s
             // 
             this.letter_s.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.letter_s.Location = new System.Drawing.Point(276, 393);
+            this.letter_s.Location = new System.Drawing.Point(173, 61);
             this.letter_s.Name = "letter_s";
             this.letter_s.Size = new System.Drawing.Size(25, 23);
             this.letter_s.TabIndex = 18;
@@ -256,7 +258,7 @@ namespace ImpiccatoSocketClient
             // letter_t
             // 
             this.letter_t.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.letter_t.Location = new System.Drawing.Point(307, 393);
+            this.letter_t.Location = new System.Drawing.Point(204, 61);
             this.letter_t.Name = "letter_t";
             this.letter_t.Size = new System.Drawing.Size(25, 23);
             this.letter_t.TabIndex = 19;
@@ -266,7 +268,7 @@ namespace ImpiccatoSocketClient
             // letter_u
             // 
             this.letter_u.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.letter_u.Location = new System.Drawing.Point(338, 393);
+            this.letter_u.Location = new System.Drawing.Point(235, 61);
             this.letter_u.Name = "letter_u";
             this.letter_u.Size = new System.Drawing.Size(25, 23);
             this.letter_u.TabIndex = 20;
@@ -276,7 +278,7 @@ namespace ImpiccatoSocketClient
             // letter_v
             // 
             this.letter_v.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.letter_v.Location = new System.Drawing.Point(369, 393);
+            this.letter_v.Location = new System.Drawing.Point(266, 61);
             this.letter_v.Name = "letter_v";
             this.letter_v.Size = new System.Drawing.Size(25, 23);
             this.letter_v.TabIndex = 21;
@@ -286,7 +288,7 @@ namespace ImpiccatoSocketClient
             // letter_w
             // 
             this.letter_w.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.letter_w.Location = new System.Drawing.Point(400, 393);
+            this.letter_w.Location = new System.Drawing.Point(297, 61);
             this.letter_w.Name = "letter_w";
             this.letter_w.Size = new System.Drawing.Size(25, 23);
             this.letter_w.TabIndex = 22;
@@ -296,7 +298,7 @@ namespace ImpiccatoSocketClient
             // letter_x
             // 
             this.letter_x.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.letter_x.Location = new System.Drawing.Point(431, 393);
+            this.letter_x.Location = new System.Drawing.Point(328, 61);
             this.letter_x.Name = "letter_x";
             this.letter_x.Size = new System.Drawing.Size(25, 23);
             this.letter_x.TabIndex = 23;
@@ -306,7 +308,7 @@ namespace ImpiccatoSocketClient
             // letter_y
             // 
             this.letter_y.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.letter_y.Location = new System.Drawing.Point(462, 393);
+            this.letter_y.Location = new System.Drawing.Point(359, 61);
             this.letter_y.Name = "letter_y";
             this.letter_y.Size = new System.Drawing.Size(25, 23);
             this.letter_y.TabIndex = 24;
@@ -316,7 +318,7 @@ namespace ImpiccatoSocketClient
             // letter_z
             // 
             this.letter_z.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.letter_z.Location = new System.Drawing.Point(493, 393);
+            this.letter_z.Location = new System.Drawing.Point(390, 61);
             this.letter_z.Name = "letter_z";
             this.letter_z.Size = new System.Drawing.Size(25, 23);
             this.letter_z.TabIndex = 25;
@@ -354,12 +356,14 @@ namespace ImpiccatoSocketClient
             // 
             // btn_mostra
             // 
-            this.btn_mostra.Location = new System.Drawing.Point(569, 266);
+            this.btn_mostra.BackColor = System.Drawing.Color.Orange;
+            this.btn_mostra.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_mostra.Location = new System.Drawing.Point(578, 266);
             this.btn_mostra.Name = "btn_mostra";
-            this.btn_mostra.Size = new System.Drawing.Size(93, 23);
+            this.btn_mostra.Size = new System.Drawing.Size(75, 23);
             this.btn_mostra.TabIndex = 29;
-            this.btn_mostra.Text = "Mostra";
-            this.btn_mostra.UseVisualStyleBackColor = true;
+            this.btn_mostra.Text = "Premi qui";
+            this.btn_mostra.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -370,45 +374,57 @@ namespace ImpiccatoSocketClient
             this.label1.TabIndex = 30;
             this.label1.Text = "Mostra una lettera casuale:";
             // 
+            // lettere
+            // 
+            this.lettere.Controls.Add(this.letter_a);
+            this.lettere.Controls.Add(this.letter_b);
+            this.lettere.Controls.Add(this.letter_c);
+            this.lettere.Controls.Add(this.letter_d);
+            this.lettere.Controls.Add(this.letter_e);
+            this.lettere.Controls.Add(this.letter_f);
+            this.lettere.Controls.Add(this.letter_z);
+            this.lettere.Controls.Add(this.letter_g);
+            this.lettere.Controls.Add(this.letter_y);
+            this.lettere.Controls.Add(this.letter_h);
+            this.lettere.Controls.Add(this.letter_x);
+            this.lettere.Controls.Add(this.letter_i);
+            this.lettere.Controls.Add(this.letter_w);
+            this.lettere.Controls.Add(this.letter_j);
+            this.lettere.Controls.Add(this.letter_v);
+            this.lettere.Controls.Add(this.letter_k);
+            this.lettere.Controls.Add(this.letter_u);
+            this.lettere.Controls.Add(this.letter_l);
+            this.lettere.Controls.Add(this.letter_t);
+            this.lettere.Controls.Add(this.letter_m);
+            this.lettere.Controls.Add(this.letter_s);
+            this.lettere.Controls.Add(this.letter_n);
+            this.lettere.Controls.Add(this.letter_r);
+            this.lettere.Controls.Add(this.letter_o);
+            this.lettere.Controls.Add(this.letter_q);
+            this.lettere.Controls.Add(this.letter_p);
+            this.lettere.Enabled = false;
+            this.lettere.Location = new System.Drawing.Point(107, 319);
+            this.lettere.Name = "lettere";
+            this.lettere.Size = new System.Drawing.Size(446, 113);
+            this.lettere.TabIndex = 31;
+            this.lettere.TabStop = false;
+            this.lettere.Text = "lettere";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(723, 444);
+            this.Controls.Add(this.lettere);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_mostra);
             this.Controls.Add(this.btn_messchat);
             this.Controls.Add(this.txt_messchat);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.letter_z);
-            this.Controls.Add(this.letter_y);
-            this.Controls.Add(this.letter_x);
-            this.Controls.Add(this.letter_w);
-            this.Controls.Add(this.letter_v);
-            this.Controls.Add(this.letter_u);
-            this.Controls.Add(this.letter_t);
-            this.Controls.Add(this.letter_s);
-            this.Controls.Add(this.letter_r);
-            this.Controls.Add(this.letter_q);
-            this.Controls.Add(this.letter_p);
-            this.Controls.Add(this.letter_o);
-            this.Controls.Add(this.letter_n);
-            this.Controls.Add(this.letter_m);
-            this.Controls.Add(this.letter_l);
-            this.Controls.Add(this.letter_k);
-            this.Controls.Add(this.letter_j);
-            this.Controls.Add(this.letter_i);
-            this.Controls.Add(this.letter_h);
-            this.Controls.Add(this.letter_g);
-            this.Controls.Add(this.letter_f);
-            this.Controls.Add(this.letter_e);
-            this.Controls.Add(this.letter_d);
-            this.Controls.Add(this.letter_c);
-            this.Controls.Add(this.letter_b);
-            this.Controls.Add(this.letter_a);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form2";
             this.Text = "Form2";
+            this.lettere.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -447,5 +463,6 @@ namespace ImpiccatoSocketClient
         private System.Windows.Forms.Button btn_messchat;
         private System.Windows.Forms.Button btn_mostra;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox lettere;
     }
 }
