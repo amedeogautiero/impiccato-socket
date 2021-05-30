@@ -185,10 +185,16 @@ namespace ImpiccatoSocketClient
 
                     string message_to_send = string.Empty;
 
-                    if (message.TipoMessaggio == TipoMessaggio.comando)
-                    {
-                        message_to_send = $"{message.TipoMessaggio.ToString()}:{message.Message}";
-                    }
+                    message_to_send = $"{message.TipoMessaggio.ToString()}:{message.Message}";
+
+                    //if (message.TipoMessaggio == TipoMessaggio.comando)
+                    //{
+                    //    message_to_send = $"{message.TipoMessaggio.ToString()}:{message.Message}";
+                    //}
+                    //else if(message.TipoMessaggio == TipoMessaggio.trychar)
+                    //{
+                    //    message_to_send = $"{message.TipoMessaggio.ToString()}:{message.Message}";
+                    //}
 
                     byte[] msg = Encoding.ASCII.GetBytes(message_to_send);
 
