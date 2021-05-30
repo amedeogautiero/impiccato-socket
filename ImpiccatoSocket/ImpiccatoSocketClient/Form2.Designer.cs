@@ -63,8 +63,10 @@ namespace ImpiccatoSocketClient
             this.grpLettere = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.grpLettere.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // letter_a
@@ -370,6 +372,7 @@ namespace ImpiccatoSocketClient
             this.txt_messchat.Name = "txt_messchat";
             this.txt_messchat.Size = new System.Drawing.Size(187, 40);
             this.txt_messchat.TabIndex = 27;
+            this.txt_messchat.Text = "COMING SOON...";
             // 
             // btn_messchat
             // 
@@ -431,7 +434,7 @@ namespace ImpiccatoSocketClient
             this.grpLettere.Controls.Add(this.letter_q);
             this.grpLettere.Controls.Add(this.letter_p);
             this.grpLettere.Enabled = false;
-            this.grpLettere.Location = new System.Drawing.Point(107, 319);
+            this.grpLettere.Location = new System.Drawing.Point(27, 319);
             this.grpLettere.Name = "grpLettere";
             this.grpLettere.Size = new System.Drawing.Size(446, 113);
             this.grpLettere.TabIndex = 31;
@@ -452,17 +455,28 @@ namespace ImpiccatoSocketClient
             // panel2
             // 
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(107, 250);
+            this.panel2.Location = new System.Drawing.Point(27, 250);
             this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(338, 44);
             this.panel2.TabIndex = 34;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::ImpiccatoSocketClient.Properties.Resources.hangman0;
+            this.pictureBox1.Location = new System.Drawing.Point(27, 23);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(203, 185);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 35;
+            this.pictureBox1.TabStop = false;
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(723, 444);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.grpLettere);
             this.Controls.Add(this.label1);
@@ -476,6 +490,7 @@ namespace ImpiccatoSocketClient
             this.grpLettere.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -517,5 +532,6 @@ namespace ImpiccatoSocketClient
         private System.Windows.Forms.GroupBox grpLettere;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
