@@ -73,7 +73,7 @@ namespace ImpiccatoSocketClient
                         (panel2.Controls[index] as Label).Tag = "s";
                     }
 
-                    int charsOK = panel2.Controls.Cast<Control>().Select(c => c is Label && (c as Label).Tag != null &&(c as Label).Tag.ToString() == "s").Count();
+                    int charsOK = panel2.Controls.Cast<Control>().Where(c => c is Label && (c as Label).Tag != null &&(c as Label).Tag.ToString() == "s").Count();
                     if (charsOK == this.wordLength)
                     {
                         MessageBox.Show("Hai vinto");

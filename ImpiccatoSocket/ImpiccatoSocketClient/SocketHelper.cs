@@ -128,7 +128,9 @@ namespace ImpiccatoSocketClient
                             TipoMessaggio = TipoMessaggio.comando,
                             Message = "sfidaok",
                         };
-                        this.StartClient(clientMessage);
+                        //this.StartClient(clientMessage);
+                        System.Threading.Thread thread1 = new System.Threading.Thread(Program.socketHelper.StartClient);
+                        thread1.Start(clientMessage);
                     }
                 }
             }
