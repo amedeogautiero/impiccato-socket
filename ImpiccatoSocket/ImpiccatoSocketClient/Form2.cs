@@ -30,6 +30,11 @@ namespace ImpiccatoSocketClient
 
         }
 
+        private void char_Click(object sender, EventArgs e)
+        {
+
+        }
+
         /*
         #region Draw Hangman
         void DrawHangman()

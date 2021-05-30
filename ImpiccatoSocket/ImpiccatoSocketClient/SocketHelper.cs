@@ -237,6 +237,7 @@ namespace ImpiccatoSocketClient
 
     public enum TipoMessaggio
     { 
-        comando
+        comando,
+        trychar,
     }
 }
