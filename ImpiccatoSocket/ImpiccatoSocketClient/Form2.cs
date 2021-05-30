@@ -56,7 +56,7 @@ namespace ImpiccatoSocketClient
             {
                 IPDest = Program.IPother,
                 TipoMessaggio = TipoMessaggio.trychar,
-                Message = (sender as Button).Text,
+                Message = (sender as Button).Text.ToUpper(),
             };
 
             Thread thread1 = new Thread(Program.socketHelper.StartClient);
