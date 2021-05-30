@@ -22,7 +22,8 @@ namespace ImpiccatoSocketClient
                 this.BeginInvoke((Action)(() =>
                 {
                     grpLettere.Enabled = true;
-                    MessageBox.Show(wordLength.ToString());
+                    //MessageBox.Show(wordLength.ToString());
+                    draw_place_letter(wordLength);
                 }));
             };
         }
@@ -30,6 +31,23 @@ namespace ImpiccatoSocketClient
         private void button19_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void draw_place_letter(int wordLength)
+        {
+            this.panel2.Controls.Clear();
+            for (int x = 0; x < wordLength; x++)
+            {
+                int location = 24 + (x * 18 + 5);
+                var lblChar = new System.Windows.Forms.Label();
+                lblChar.AutoSize = true;
+                lblChar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+                lblChar.Location = new System.Drawing.Point(location, 19);
+                lblChar.Name = $"lblChar{x}";
+                lblChar.Size = new System.Drawing.Size(18, 19);
+                lblChar.Text = "_";
+                this.panel2.Controls.Add(lblChar);
+            }
         }
 
         private void char_Click(object sender, EventArgs e)
