@@ -12,6 +12,7 @@ namespace ImpiccatoSocketClient
         public static Form2 form2 = null;
         public static Form3 form3 = null;
         public static SocketHelper socketHelper = null;
+        public static string IPother = string.Empty;
         /// <summary>
         /// Punto di ingresso principale dell'applicazione.
         /// </summary>

@@ -77,6 +77,7 @@ namespace ImpiccatoSocketClient
             Thread thread1 = new Thread(Program.socketHelper.StartClient);
             thread1.Start(clientMessage);
 
+            Program.IPother = txtOtherIP.Text;
             //Helper.StartClient(txtOtherIP.Text, txtMessage.Text);
         }
     }
