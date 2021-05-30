@@ -11,6 +11,7 @@ namespace ImpiccatoSocketClient
         public static Form1 form1 = null;
         public static Form2 form2 = null;
         public static Form3 form3 = null;
+        public static SocketHelper socketHelper = null;
         /// <summary>
         /// Punto di ingresso principale dell'applicazione.
         /// </summary>
@@ -19,6 +20,8 @@ namespace ImpiccatoSocketClient
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            socketHelper = new SocketHelper();
 
             Program.form1 = new Form1();
 

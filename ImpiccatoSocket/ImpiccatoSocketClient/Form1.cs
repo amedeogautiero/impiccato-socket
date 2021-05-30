@@ -14,13 +14,13 @@ namespace ImpiccatoSocketClient
 {
     public partial class Form1 : Form
     {
-        SocketHelper socketHelper = null;
+        
         public Form1()
         {
             InitializeComponent();
 
-            socketHelper = new SocketHelper();
-            socketHelper.ListeningCompleted += delegate (string endpoint)
+            
+            Program.socketHelper.ListeningCompleted += delegate (string endpoint)
             {
                 this.BeginInvoke((Action)(() =>
                 {
@@ -28,7 +28,7 @@ namespace ImpiccatoSocketClient
                 }));
             };
 
-            socketHelper.OnChiediSfida += delegate(string endpoint)
+            Program.socketHelper.OnChiediSfida += delegate(string endpoint)
             {
                 
                 var res = MessageBox.Show("Sfida ??", "", MessageBoxButtons.YesNo);
@@ -48,7 +48,7 @@ namespace ImpiccatoSocketClient
             };
 
 
-            socketHelper.OnSfidaOk += delegate (string endpoint)
+            Program.socketHelper.OnSfidaOk += delegate (string endpoint)
             {
                 this.BeginInvoke((Action)(() =>
                 {
@@ -60,7 +60,7 @@ namespace ImpiccatoSocketClient
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Thread thread1 = new Thread(socketHelper.StartListening);
+            Thread thread1 = new Thread(Program.socketHelper.StartListening);
             thread1.Start();
            
         }
@@ -74,7 +74,7 @@ namespace ImpiccatoSocketClient
                 Message = "sfida",
             };
 
-            Thread thread1 = new Thread(socketHelper.StartClient);
+            Thread thread1 = new Thread(Program.socketHelper.StartClient);
             thread1.Start(clientMessage);
 
             //Helper.StartClient(txtOtherIP.Text, txtMessage.Text);

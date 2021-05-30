@@ -55,6 +55,7 @@ namespace ImpiccatoSocketClient
             this.btn_scrivi.TabIndex = 1;
             this.btn_scrivi.Text = "Invia";
             this.btn_scrivi.UseVisualStyleBackColor = false;
+            this.btn_scrivi.Click += new System.EventHandler(this.btn_scrivi_Click);
             // 
             // textBox1
             // 

@@ -21,5 +21,10 @@ namespace ImpiccatoSocketClient
         {
 
         }
+
+        private void btn_scrivi_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
