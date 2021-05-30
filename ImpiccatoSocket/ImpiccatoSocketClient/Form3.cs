@@ -16,6 +16,15 @@ namespace ImpiccatoSocketClient
         public Form3()
         {
             InitializeComponent();
+
+            Program.socketHelper.OnTryChar += delegate (string @char)
+            {
+                this.BeginInvoke((Action)(() =>
+                {
+                    var ret = txtWord.Text.Contains(@char);
+                    MessageBox.Show(ret.ToString());
+                }));
+            };
         }
 
         private void Form3_Load(object sender, EventArgs e)
@@ -29,7 +38,7 @@ namespace ImpiccatoSocketClient
             {
                 IPDest = Program.IPother,
                 TipoMessaggio = TipoMessaggio.comando,
-                Message = $"startgame|{textBox1.Text.Length}",
+                Message = $"startgame|{txtWord.Text.Length}",
             };
 
             Thread thread1 = new Thread(Program.socketHelper.StartClient);

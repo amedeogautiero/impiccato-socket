@@ -17,12 +17,16 @@ namespace ImpiccatoSocketClient
 
     public delegate void StartGameDelegate(int wordLength);
 
+    public delegate void TryCharDelegate(string @char);
+    
+
     public class SocketHelper
     {
         public event ListeningDelegate ListeningCompleted;
         public event ChiediSfidaDelegate OnChiediSfida;
         public event SfidaOkDelegate OnSfidaOk;
         public event StartGameDelegate OnStartGame;
+        public event TryCharDelegate OnTryChar;
 
         public void StartListening()
         {
@@ -138,7 +142,13 @@ namespace ImpiccatoSocketClient
                     OnStartGame(int.Parse(parts2[1]));
                 }
             }
-
+            else if (tipomesaggio == TipoMessaggio.trychar.ToString())
+            {
+                if (OnTryChar != null)
+                {
+                    OnTryChar(message);
+                }
+            }
         }
 
         public void StartClient(object _message)
