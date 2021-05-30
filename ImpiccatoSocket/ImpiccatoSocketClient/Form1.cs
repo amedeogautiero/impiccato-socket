@@ -37,6 +37,8 @@ namespace ImpiccatoSocketClient
                 {
                     this.BeginInvoke((Action)(() =>
                     {
+                        //Program.IPremote = endpoint;
+                        Program.IPother = endpoint;
                         this.Hide();
                         Program.form2.Show();
                     }));
