@@ -29,7 +29,7 @@ namespace ImpiccatoSocketClient
             {
                 IPDest = Program.IPother,
                 TipoMessaggio = TipoMessaggio.comando,
-                Message = "startgame",
+                Message = $"startgame|{textBox1.Text.Length}",
             };
 
             Thread thread1 = new Thread(Program.socketHelper.StartClient);
