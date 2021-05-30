@@ -44,7 +44,7 @@ namespace ImpiccatoSocketClient
 
             do
             {
-                index = txtWord.Text.IndexOf(@char, lastIndex() + 1);
+                index = txtWord.Text.ToUpper().IndexOf(@char, lastIndex() + 1);
                 if (index >= 0)
                 {
                     indexes.Add(index);
