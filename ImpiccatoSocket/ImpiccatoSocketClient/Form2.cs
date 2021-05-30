@@ -70,9 +70,11 @@ namespace ImpiccatoSocketClient
                     foreach (int index in indexes)
                     {
                         (panel2.Controls[index] as Label).Text = lastChar;
+                        (panel2.Controls[index] as Label).Tag = "s";
                     }
 
-                    if (tentativiOK == this.wordLength)
+                    int charsOK = panel2.Controls.Cast<Control>().Select(c => c is Label && (c as Label).Tag != null &&(c as Label).Tag.ToString() == "s").Count();
+                    if (charsOK == this.wordLength)
                     {
                         MessageBox.Show("Hai vinto");
                         grpLettere.Enabled = false;
